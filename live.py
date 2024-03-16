@@ -10,10 +10,12 @@ for job in jobs:
         company_name = job.find('h3', class_='joblist-comp-name').text.replace(' ','')
         skills = job.find('span', class_='srp-skills').text.replace(' ','')
         location = job.find('span')['title']
+        more_info = job.find('h2').a['href']
     
 
         print(f'Company name: {company_name.strip()}')
         print(f'skills: {skills.strip()}')
         print(f'location: {location.strip()}')
+        print(f'More info: {more_info}')
 
         print()
